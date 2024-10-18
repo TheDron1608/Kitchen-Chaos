@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Holdable : MonoBehaviour
 {
-    protected ItemHolder currentHolder {  get; private set; }
+    [SerializeField] protected ItemHolder currentHolder;
 
     public bool Replace(ItemHolder newHolder)
     {   
-        if (newHolder.GetCurrentHoldableItem() != null)
+        if (newHolder.GetCurrentHoldableItem() == null)
         {   
             currentHolder.ClearCurrentHoldableItem();
-            transform.parent = newHolder.GetItemHolderContainer();
+            currentHolder = newHolder;
             newHolder.SetCurrentHoldableItem(this);
 
             return true;

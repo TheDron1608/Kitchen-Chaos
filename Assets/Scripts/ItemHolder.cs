@@ -5,13 +5,7 @@ using UnityEngine;
 public abstract class ItemHolder : MonoBehaviour
 {
     [SerializeField] protected Transform _itemHolderContainer;
-
-    protected Holdable _currentHoldableItem;
-
-    public Transform GetItemHolderContainer()
-    {
-        return _itemHolderContainer;
-    }
+    [SerializeField] protected Holdable _currentHoldableItem = null;
 
     public void ClearCurrentHoldableItem()
     {
@@ -24,5 +18,7 @@ public abstract class ItemHolder : MonoBehaviour
     public void SetCurrentHoldableItem(Holdable item)
     {
         _currentHoldableItem = item;
+        item.transform.parent = _itemHolderContainer;
+        item.transform.localPosition = Vector3.zero;
     }
 }
