@@ -11,12 +11,18 @@ public class Holdable : MonoBehaviour
     {   
         if (newHolder.GetCurrentHoldableItem() == null)
         {   
-            currentHolder.ClearCurrentHoldableItem();
+            currentHolder?.ClearCurrentHoldableItem();
             currentHolder = newHolder;
             newHolder.SetCurrentHoldableItem(this);
 
             return true;
         }
         return false;
+    }
+
+    public void Remove()
+    {
+        currentHolder?.ClearCurrentHoldableItem();
+        Destroy(this);
     }
 }

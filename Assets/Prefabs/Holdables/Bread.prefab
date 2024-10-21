@@ -10,13 +10,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.103
       objectReference: {fileID: 0}
     - target: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
         type: 3}
@@ -61,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 9161970750083512805, guid: a781b123e8a1d1141afdba7316e16b22,
         type: 3}
       propertyPath: m_Name
-      value: Cheese
+      value: Bread
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69,7 +84,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2000087397904101111, guid: a781b123e8a1d1141afdba7316e16b22,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4234546872863057622}
+      addedObject: {fileID: 4307183936608507830}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a781b123e8a1d1141afdba7316e16b22, type: 3}
 --- !u!4 &416311390076579840 stripped
@@ -78,7 +93,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2163616665591979767}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4417636013757890877
+--- !u!1001 &4344998945725673565
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -86,69 +101,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 416311390076579840}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071067
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: db17778395d3a7e469140aff51f09aa7,
+    - target: {fileID: 919132149155446097, guid: bb61c33115ebfba498864e1e44776bd0,
         type: 3}
       propertyPath: m_Name
-      value: cheese
+      value: bread
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: db17778395d3a7e469140aff51f09aa7, type: 3}
---- !u!4 &4234546872863057622 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: bb61c33115ebfba498864e1e44776bd0, type: 3}
+--- !u!4 &4307183936608507830 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db17778395d3a7e469140aff51f09aa7,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bb61c33115ebfba498864e1e44776bd0,
     type: 3}
-  m_PrefabInstance: {fileID: 4417636013757890877}
+  m_PrefabInstance: {fileID: 4344998945725673565}
   m_PrefabAsset: {fileID: 0}

@@ -77,15 +77,24 @@ public class Player : ItemHolder
             Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out RaycastHit hit, 5f)
             && hit.transform.TryGetComponent<ISelectable>(out ISelectable hitObject)
             )
-        {   
-            _lastSelectedObject?.Deselect();
-            _lastSelectedObject = hitObject;
-            _currentSelectedObject = hitObject;
-            hitObject.Select();
-        }
-        else
         {
-            _lastSelectedObject?.Deselect();
+            if (_currentSelectedObject == null)
+            {
+                _currentSelectedObject = hitObject;
+                _currentSelectedObject.Select();
+            }
+            else if (_currentSelectedObject != hitObject)
+            {
+                _lastSelectedObject = _currentSelectedObject;
+                _lastSelectedObject.Deselect();
+                _currentSelectedObject = hitObject;
+                _currentSelectedObject.Select();
+            }
+        }
+        else if (_currentSelectedObject != null)
+        {   
+            _lastSelectedObject = _currentSelectedObject;
+            _currentSelectedObject.Deselect();
             _currentSelectedObject = null;
         }
     }

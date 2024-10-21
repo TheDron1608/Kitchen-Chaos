@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737880586006553903}
   m_Layer: 0
-  m_Name: ItemHolderPosition
+  m_Name: ItemHolderContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5353530092199274425}
-  - component: {fileID: 6432274256333314891}
+  - component: {fileID: 2038259294481720944}
   - component: {fileID: 6054146153954888655}
   - component: {fileID: 3837334971952123763}
   m_Layer: 0
@@ -67,7 +67,7 @@ Transform:
   - {fileID: 5737880586006553903}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6432274256333314891
+--- !u!114 &2038259294481720944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,12 +76,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4042483896823472963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c1e30ca9ffd964085f57d1122d794c, type: 3}
+  m_Script: {fileID: 11500000, guid: 916897fa1b39aca4ab4487aaa1a17c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _itemHolderContainer: {fileID: 5737880586006553903}
   _currentHoldableItem: {fileID: 0}
-  _meshSelected: {fileID: 3071809206012875568}
+  _mesh: {fileID: 3071809206012875568}
   _material: {fileID: 2100000, guid: 5e6d4c8c4ffda33458c576122ed5812f, type: 2}
   _materialSelected: {fileID: 2100000, guid: 06d342a65ebaecd43a776e3a7e8b681d, type: 2}
 --- !u!54 &6054146153954888655
