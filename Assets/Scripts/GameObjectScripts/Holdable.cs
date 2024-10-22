@@ -23,6 +23,6 @@ public class Holdable : MonoBehaviour
     public void Remove()
     {
         currentHolder?.ClearCurrentHoldableItem();
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

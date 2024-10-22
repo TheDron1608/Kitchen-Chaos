@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c5da66a84a2ae4b8dc6421b6c02cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 3686122453934217710}
+  _meshes:
+  - {fileID: 3879772078971490380}
+  - {fileID: 1651749889273255863}
   _material: {fileID: 2100000, guid: 5e6d4c8c4ffda33458c576122ed5812f, type: 2}
   _materialSelected: {fileID: 2100000, guid: 06d342a65ebaecd43a776e3a7e8b681d, type: 2}
   createItem: {fileID: 0}
@@ -194,6 +196,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1035477900430356550}
   m_SourcePrefab: {fileID: 100100000, guid: eb719f1f8e4d4204b96010b670d3d876, type: 3}
+--- !u!1 &1651749889273255863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6265944402364566776, guid: eb719f1f8e4d4204b96010b670d3d876,
+    type: 3}
+  m_PrefabInstance: {fileID: 4604601892614055103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3686122453934217710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb719f1f8e4d4204b96010b670d3d876,
@@ -276,6 +284,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3879772078971490380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8488883838179003149, guid: eb719f1f8e4d4204b96010b670d3d876,
+    type: 3}
+  m_PrefabInstance: {fileID: 4604601892614055103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4065743839479415636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb719f1f8e4d4204b96010b670d3d876,

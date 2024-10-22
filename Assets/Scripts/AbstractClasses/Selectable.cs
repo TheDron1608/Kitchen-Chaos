@@ -4,28 +4,38 @@ using UnityEngine;
 
 public abstract class Selectable : MonoBehaviour, ISelectable
 {
-    [SerializeField] protected GameObject _mesh;
+    [SerializeField] protected List<GameObject> _meshes;
     [SerializeField] protected Material _material;
     [SerializeField] protected Material _materialSelected;
-    protected MeshRenderer _meshRenderer;
+    protected List<MeshRenderer> _meshRenderers;
 
     protected bool _isSelected;
 
     protected void Awake()
-    {
-        _meshRenderer = _mesh.GetComponent<MeshRenderer>();
+    {   
+        _meshRenderers = new List<MeshRenderer>();
+        foreach (GameObject gameObject in _meshes)
+        {
+            _meshRenderers.Add(gameObject.GetComponent<MeshRenderer>());
+        }
     }
 
     public void Select()
     {
-        _meshRenderer.material = _materialSelected;
+        foreach (MeshRenderer meshRenderer in _meshRenderers)
+        {
+            meshRenderer.material = _materialSelected;
+        }
         _isSelected = true;
         Debug.Log("selected " + this.name);
     }
 
     public void Deselect()
     {
-        _meshRenderer.material = _material;
+        foreach (MeshRenderer meshRenderer in _meshRenderers)
+        {
+            meshRenderer.material = _material;
+        }
         _isSelected = false;
         Debug.Log("deselected " + this.name);
     }

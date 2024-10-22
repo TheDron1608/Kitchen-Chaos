@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashBin : SelectableItemHolder, IInteractable
+public class TrashBin : Selectable, IInteractable
 {
     private void Start()
     {
@@ -19,9 +19,10 @@ public class TrashBin : SelectableItemHolder, IInteractable
 
     public void Interact()
     {
+        Debug.Log("interacted with " + name);
         if (Player.Instance.GetCurrentHoldableItem() != null)
         {
-            Player.Instance.GetCurrentHoldableItem().Replace(this);
+            Player.Instance.GetCurrentHoldableItem().Remove();
         }
     }
 }

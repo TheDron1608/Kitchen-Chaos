@@ -81,7 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemHolderContainer: {fileID: 5737880586006553903}
   _currentHoldableItem: {fileID: 0}
-  _mesh: {fileID: 3071809206012875568}
+  _meshes:
+  - {fileID: 3071809206012875568}
   _material: {fileID: 2100000, guid: 5e6d4c8c4ffda33458c576122ed5812f, type: 2}
   _materialSelected: {fileID: 2100000, guid: 06d342a65ebaecd43a776e3a7e8b681d, type: 2}
 --- !u!54 &6054146153954888655
