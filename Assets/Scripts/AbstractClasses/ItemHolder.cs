@@ -21,4 +21,11 @@ public abstract class ItemHolder : Furniture
         item.transform.parent = _itemHolderContainer;
         item.transform.localPosition = Vector3.zero;
     }
+    public void SliceCurrentHoldableitem()
+    {
+        if (_currentHoldableItem != null && _currentHoldableItem is SliceableHoldable)
+        {
+            (_currentHoldableItem as SliceableHoldable).SliceProgress();
+        }
+    }
 }

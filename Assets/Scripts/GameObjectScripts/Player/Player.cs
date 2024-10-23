@@ -26,6 +26,7 @@ public class Player : ItemHolder
     [SerializeField] protected float _speed;
 
     public event EventHandler<IInteractable> OnInteract;
+    public event EventHandler<IInteractable> OnInteractAlt;
     public event EventHandler <PlayerReSelectEventArgs> OnReSelect;
 
     protected PlayerInput _playerInput;
@@ -48,11 +49,8 @@ public class Player : ItemHolder
         _playerInput = new PlayerInput();
         _playerInput.Player.Enable();
 
-        _playerInput.Player.Interact.performed +=
-            (InputAction.CallbackContext obj) =>
-            {
-                OnInteract?.Invoke(this, _currentSelectedObject as IInteractable);
-            };
+        _playerInput.Player.Interact.performed += Player_OnInteract;
+        _playerInput.Player.InteractAlt.performed += Player_OnInteractAlt;
         OnReSelect += Player_OnReSelect;
 
         if (Instance == null)
@@ -69,6 +67,14 @@ public class Player : ItemHolder
     {
         _lastSelectedObject = e.oldSelected;
         _currentSelectedObject = e.newSelected;
+    }
+    private void Player_OnInteract(InputAction.CallbackContext obj)
+    {
+        OnInteract?.Invoke(this, _currentSelectedObject as IInteractable);
+    }
+    private void Player_OnInteractAlt(InputAction.CallbackContext obj)
+    {
+        OnInteractAlt?.Invoke(this, _currentSelectedObject as IInteractable);
     }
 
     protected void Update()

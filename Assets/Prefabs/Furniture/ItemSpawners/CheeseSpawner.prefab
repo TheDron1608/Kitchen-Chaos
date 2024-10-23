@@ -156,7 +156,7 @@ PrefabInstance:
         type: 3}
       propertyPath: createItem
       value: 
-      objectReference: {fileID: 6941701702105179253, guid: c546536ea14971441ac91ba02f5c4679,
+      objectReference: {fileID: 1873910927569587079, guid: c546536ea14971441ac91ba02f5c4679,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

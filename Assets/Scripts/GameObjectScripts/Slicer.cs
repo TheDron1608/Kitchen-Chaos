@@ -1,17 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
-public class Slicer : ItemHolder, IInteractable
+public class Slicer : Furniture, IInteractable
 {
-    private void Start()
+    [SerializeField] private Table _table;
+    private Animator _animator;
+
+    const string ANIMATOR_ON_INTERACT_TRIGGER_NAME = "OnInteract";
+    const string ANIMATOR_ON_INTERACT_ANIMATION_NAME = "Knife|OnInteract";
+
+    private void Awake()
     {
-        Player.Instance.OnInteract += Player_OnIteract;
+        _animator = GetComponent<Animator>();
     }
 
-    void Player_OnIteract(object sender, IInteractable sendTarget)
+    private void Start()
     {
-        if (sendTarget == this as IInteractable)
+        Player.Instance.OnInteractAlt += Player_OnIteractAlt;
+    }
+
+    void Player_OnIteractAlt(object sender, IInteractable sendTarget)
+    {
+        if (sendTarget == _table as IInteractable)
         {
             Interact();
         }
@@ -19,6 +31,11 @@ public class Slicer : ItemHolder, IInteractable
 
     public void Interact()
     {
-
+        Debug.Log(_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME));
+        if (!(_table.GetCurrentHoldableItem() as SliceableHoldable).IsSliced && !_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME))
+        {
+            _animator.SetTrigger(ANIMATOR_ON_INTERACT_TRIGGER_NAME);
+            _table.SliceCurrentHoldableitem();
+        }
     }
 }
