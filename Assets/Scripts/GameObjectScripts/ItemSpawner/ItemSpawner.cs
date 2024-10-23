@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSpawner : Selectable, IInteractable
+public class ItemSpawner : Furniture, IInteractable
 {
     [SerializeField] public Holdable createItem;
     private void Start()

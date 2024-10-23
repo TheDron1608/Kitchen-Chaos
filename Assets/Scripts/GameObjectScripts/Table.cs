@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : SelectableItemHolder, IInteractable
+public class Table : ItemHolder, IInteractable
 {
     private void Start()
     {

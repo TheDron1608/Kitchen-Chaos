@@ -6,6 +6,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+public class  PlayerReSelectEventArgs
+{
+    public Furniture oldSelected;
+    public Furniture newSelected;
+
+    public PlayerReSelectEventArgs (Furniture oldSelected, Furniture newSelected)
+    {
+        this.oldSelected = oldSelected;
+        this.newSelected = newSelected;
+    }
+}
+
 public class Player : ItemHolder
 {   
     public static Player Instance;
@@ -14,18 +26,20 @@ public class Player : ItemHolder
     [SerializeField] protected float _speed;
 
     public event EventHandler<IInteractable> OnInteract;
+    public event EventHandler <PlayerReSelectEventArgs> OnReSelect;
 
     protected PlayerInput _playerInput;
     protected bool _isWalking;
     protected bool _canWalk;
     protected Rigidbody _rigidBodyComponent;
-    protected ISelectable _lastSelectedObject = null;
-    protected ISelectable _currentSelectedObject = null;
+    protected Furniture _lastSelectedObject = null;
+    protected Furniture _currentSelectedObject = null;
 
     public bool IsWalking() 
     { 
         return _isWalking; 
     }
+
 
     protected void Awake()
     {
@@ -39,6 +53,7 @@ public class Player : ItemHolder
             {
                 OnInteract?.Invoke(this, _currentSelectedObject as IInteractable);
             };
+        OnReSelect += Player_OnReSelect;
 
         if (Instance == null)
         {
@@ -48,6 +63,12 @@ public class Player : ItemHolder
         {
             throw new Exception("Maximum 1 Player prefab");
         }
+    }
+
+    private void Player_OnReSelect(object sender, PlayerReSelectEventArgs e)
+    {
+        _lastSelectedObject = e.oldSelected;
+        _currentSelectedObject = e.newSelected;
     }
 
     protected void Update()
@@ -73,29 +94,20 @@ public class Player : ItemHolder
 
     protected void UpdateSelected()
     {
-        if (
-            Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out RaycastHit hit, 5f)
-            && hit.transform.TryGetComponent<ISelectable>(out ISelectable hitObject)
-            )
+        Furniture newSelectedObject;
+        if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out RaycastHit hit, 5f))
         {
-            if (_currentSelectedObject == null)
-            {
-                _currentSelectedObject = hitObject;
-                _currentSelectedObject.Select();
-            }
-            else if (_currentSelectedObject != hitObject)
-            {
-                _lastSelectedObject = _currentSelectedObject;
-                _lastSelectedObject.Deselect();
-                _currentSelectedObject = hitObject;
-                _currentSelectedObject.Select();
-            }
+            hit.transform.TryGetComponent<Furniture>(out newSelectedObject);
         }
-        else if (_currentSelectedObject != null)
-        {   
-            _lastSelectedObject = _currentSelectedObject;
-            _currentSelectedObject.Deselect();
-            _currentSelectedObject = null;
+        else
+        {
+            newSelectedObject = null;
+        }
+
+        if (_currentSelectedObject != newSelectedObject)
+        {
+            Debug.Log("reselected: " + _currentSelectedObject + " : " + newSelectedObject);
+            OnReSelect?.Invoke(this, new PlayerReSelectEventArgs(_currentSelectedObject, newSelectedObject));
         }
     }
 }

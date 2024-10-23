@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashBin : Furniture, IInteractable
+public class Slicer : ItemHolder, IInteractable
 {
     private void Start()
     {
@@ -19,10 +19,6 @@ public class TrashBin : Furniture, IInteractable
 
     public void Interact()
     {
-        Debug.Log("interacted with " + name);
-        if (Player.Instance.GetCurrentHoldableItem() != null)
-        {
-            Player.Instance.GetCurrentHoldableItem().Remove();
-        }
+
     }
 }

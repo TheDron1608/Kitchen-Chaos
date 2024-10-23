@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemHolder : MonoBehaviour
+public abstract class ItemHolder : Furniture
 {
     [SerializeField] protected Transform _itemHolderContainer;
     [SerializeField] protected Holdable _currentHoldableItem = null;
