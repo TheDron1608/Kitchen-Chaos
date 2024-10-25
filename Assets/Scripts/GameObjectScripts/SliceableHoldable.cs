@@ -6,12 +6,12 @@ public class SliceableHoldable : Holdable
 {
     [SerializeField] protected GameObject _slicedMesh;
     [SerializeField] protected GameObject _currentMesh;
-    [SerializeField] protected int BaseSlicesAmount;
-    protected int _slicesLeft;
+    [SerializeField] private int _baseSlicesAmount;
+    private int _slicesLeft;
 
     private void Start()
     {
-        _slicesLeft = BaseSlicesAmount;
+        _slicesLeft = _baseSlicesAmount;
     }
 
     public bool IsSliced { get; private set; } = false;
@@ -21,7 +21,7 @@ public class SliceableHoldable : Holdable
         if (!IsSliced)
         {
             _slicesLeft--;
-            if (_slicesLeft == 0 )
+            if (_slicesLeft <= 0 )
             {
                 SliceFinish();
             }
@@ -33,5 +33,10 @@ public class SliceableHoldable : Holdable
         _currentMesh.SetActive(false);
         _slicedMesh.SetActive(true);
         IsSliced = true;
+    }
+
+    public float GetProgress()
+    {
+        return (float)(_baseSlicesAmount - _slicesLeft) / _baseSlicesAmount;
     }
 }

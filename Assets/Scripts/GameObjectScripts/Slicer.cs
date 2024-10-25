@@ -6,6 +6,7 @@ using UnityEngine;
 public class Slicer : Furniture, IInteractable
 {
     [SerializeField] private Table _table;
+    [SerializeField] private ProgressBar _progressBar;
     private Animator _animator;
 
     const string ANIMATOR_ON_INTERACT_TRIGGER_NAME = "OnInteract";
@@ -32,10 +33,15 @@ public class Slicer : Furniture, IInteractable
     public void Interact()
     {
         Debug.Log(_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME));
-        if (!(_table.GetCurrentHoldableItem() as SliceableHoldable).IsSliced && !_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME))
+        if (
+            _table.GetCurrentHoldableItem() is SliceableHoldable && 
+            !(_table.GetCurrentHoldableItem() as SliceableHoldable).IsSliced && 
+            !_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME)
+            )
         {
             _animator.SetTrigger(ANIMATOR_ON_INTERACT_TRIGGER_NAME);
             _table.SliceCurrentHoldableitem();
+            _progressBar.Progress = (_table.GetCurrentHoldableItem() as SliceableHoldable).GetProgress();
         }
     }
 }

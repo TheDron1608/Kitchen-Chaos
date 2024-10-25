@@ -108,7 +108,7 @@ MonoBehaviour:
   currentHolder: {fileID: 0}
   _slicedMesh: {fileID: 4698225701791640410}
   _currentMesh: {fileID: 3571338412991331436}
-  BaseSlicesAmount: 3
+  _baseSlicesAmount: 3
 --- !u!1001 &4417636013757890877
 PrefabInstance:
   m_ObjectHideFlags: 0
