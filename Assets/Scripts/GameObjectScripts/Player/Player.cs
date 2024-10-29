@@ -112,7 +112,6 @@ public class Player : ItemHolder
 
         if (_currentSelectedObject != newSelectedObject)
         {
-            Debug.Log("reselected: " + _currentSelectedObject + " : " + newSelectedObject);
             OnReSelect?.Invoke(this, new PlayerReSelectEventArgs(_currentSelectedObject, newSelectedObject));
         }
     }

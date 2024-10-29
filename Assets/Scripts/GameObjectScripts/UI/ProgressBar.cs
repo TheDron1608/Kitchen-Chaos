@@ -22,15 +22,20 @@ public class ProgressBar : MonoBehaviour
         set
         {
             _progress = value;
-            _progressImage.fillAmount = _progress;
-            if (_progress < 0.02f || _progress > 0.98f)
-            {
-                Hide();
-            }
-            else
-            {
-                Show();
-            }
+            UpdateProgress();
+        }
+    }
+
+    private void UpdateProgress()
+    {
+        _progressImage.fillAmount = _progress;
+        if (_progress < 0.02f || _progress > 0.98f)
+        {
+            Hide();
+        }
+        else
+        {
+            Show();
         }
     }
 
@@ -42,5 +47,10 @@ public class ProgressBar : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    public void ResetProgress()
+    {
+        Progress = 0f;
     }
 }

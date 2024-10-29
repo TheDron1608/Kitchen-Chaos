@@ -6,6 +6,7 @@ public abstract class ItemHolder : Furniture
 {
     [SerializeField] protected Transform _itemHolderContainer;
     [SerializeField] protected Holdable _currentHoldableItem = null;
+    [SerializeField] protected bool _removeRotationOfitemWhenReplace = false;
 
     public void ClearCurrentHoldableItem()
     {
@@ -20,6 +21,10 @@ public abstract class ItemHolder : Furniture
         _currentHoldableItem = item;
         item.transform.parent = _itemHolderContainer;
         item.transform.localPosition = Vector3.zero;
+        if (_removeRotationOfitemWhenReplace)
+        {
+            item.transform.rotation = _itemHolderContainer.transform.rotation;
+        }
     }
     public void SliceCurrentHoldableitem()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Table : ItemHolder, IInteractable
 {
-    private void Start()
+    protected void Start()
     {
         Player.Instance.OnInteract += Player_OnIteract;
     }
@@ -22,16 +22,10 @@ public class Table : ItemHolder, IInteractable
         if (_currentHoldableItem != null)
         {
             _currentHoldableItem.Replace(Player.Instance);
-            Debug.Log("taking from " + this.name);
         }
         else if (Player.Instance.GetCurrentHoldableItem() != null)
         {
             Player.Instance.GetCurrentHoldableItem().Replace(this);
-            Debug.Log("giving to " + this.name);
-        }
-        else
-        {
-            Debug.Log("doing nothing to " + this.name);
         }
     }
 }

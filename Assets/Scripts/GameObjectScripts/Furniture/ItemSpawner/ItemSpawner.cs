@@ -24,7 +24,6 @@ public class ItemSpawner : Furniture, IInteractable
         {
             Holdable newItem = Instantiate(createItem);
             newItem.Replace(Player.Instance);
-            Debug.Log("taking from " + this.name + " new spawned item " + newItem.name);
         }
     }
 }

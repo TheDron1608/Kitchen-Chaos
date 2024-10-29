@@ -800,6 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemHolderContainer: {fileID: 451101262}
   _currentHoldableItem: {fileID: 0}
+  _removeRotationOfitemWhenReplace: 0
   _speed: 15
 --- !u!54 &805512597
 Rigidbody:
@@ -1128,6 +1129,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bff3d0b9f639694bb079aac6212b03c, type: 3}
+--- !u!1001 &1347118652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2528253678790181536, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_Name
+      value: TableToaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298435518152851996, guid: 901626c256ecc724488387fabc3c1f06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 901626c256ecc724488387fabc3c1f06, type: 3}
 --- !u!1 &1362161404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,3 +1621,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1362161405}
+  - {fileID: 1347118652}

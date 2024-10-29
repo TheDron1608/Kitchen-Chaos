@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInteractableAlt
+public interface IInteractable
 {
-    public void InteractAlt();
+    public void Interact();
 }
