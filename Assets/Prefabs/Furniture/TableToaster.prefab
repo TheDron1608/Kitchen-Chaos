@@ -1,5 +1,91 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &222755505885163045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5298435518152851996}
+    m_Modifications:
+    - target: {fileID: 4541769715443240035, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_Name
+      value: ProgressBarTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46fd225ce27a31649ba93db0ba55ea17, type: 3}
+--- !u!114 &7159984189436706717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6938425644229693880, guid: 46fd225ce27a31649ba93db0ba55ea17,
+    type: 3}
+  m_PrefabInstance: {fileID: 222755505885163045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09aa86a427917e04899159030e039dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7736518162445756078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
+    type: 3}
+  m_PrefabInstance: {fileID: 222755505885163045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5403885387827105316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,6 +160,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7389674937019176969}
+    - targetCorrespondingSourceObject: {fileID: 250413949731441720, guid: ca4cd5a222e3ad84b9f7141777932a2b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7736518162445756078}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7631451214584401028, guid: ca4cd5a222e3ad84b9f7141777932a2b,
         type: 3}
@@ -100,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemHolderContainer: {fileID: 4250200253201770332}
   _currentHoldableItem: {fileID: 0}
-  _removeRotationOfitemWhenReplace: 1
+  _progressBarTimer: {fileID: 7159984189436706717}
 --- !u!4 &5298435518152851996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 250413949731441720, guid: ca4cd5a222e3ad84b9f7141777932a2b,

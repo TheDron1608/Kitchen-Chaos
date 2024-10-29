@@ -30,7 +30,7 @@ public class ItemSpawnerAnimator : MonoBehaviour, IInteractable
 
     public void Interact()
     {   
-        if (Player.Instance.GetCurrentHoldableItem() == null)
+        if (Player.Instance.CurrentHoldableItem == null)
         {
             _animator.SetTrigger(ANIMATOR_ONINTERACT_TRIGGER_NAME);
         }

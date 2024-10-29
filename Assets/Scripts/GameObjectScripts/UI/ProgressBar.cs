@@ -8,7 +8,7 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private Image _progressImage;
     protected float _progress;
 
-    private void Update()
+    private void LateUpdate()
     {
         transform.forward = Camera.main.transform.forward;
     }
@@ -29,7 +29,7 @@ public class ProgressBar : MonoBehaviour
     private void UpdateProgress()
     {
         _progressImage.fillAmount = _progress;
-        if (_progress < 0.02f || _progress > 0.98f)
+        if (_progress == 0f || _progress == 1f)
         {
             Hide();
         }

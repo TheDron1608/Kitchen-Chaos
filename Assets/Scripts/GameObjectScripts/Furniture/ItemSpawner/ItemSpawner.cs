@@ -20,7 +20,7 @@ public class ItemSpawner : Furniture, IInteractable
 
     public void Interact()
     {
-        if (Player.Instance.GetCurrentHoldableItem() == null)
+        if (Player.Instance.CurrentHoldableItem == null)
         {
             Holdable newItem = Instantiate(createItem);
             newItem.Replace(Player.Instance);

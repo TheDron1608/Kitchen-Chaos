@@ -23,9 +23,9 @@ public class Table : ItemHolder, IInteractable
         {
             _currentHoldableItem.Replace(Player.Instance);
         }
-        else if (Player.Instance.GetCurrentHoldableItem() != null)
+        else if (Player.Instance.CurrentHoldableItem != null)
         {
-            Player.Instance.GetCurrentHoldableItem().Replace(this);
+            Player.Instance.CurrentHoldableItem.Replace(this);
         }
     }
 }

@@ -8,6 +8,6 @@ interface IItemHolder
     public Transform GetItemHolderContainer();
 
     public void ClearCurrentHoldableItem();
-    public Holdable GetCurrentHoldableItem();
+    public Holdable CurrentHoldableItem();
     public void SetCurrentHoldableItem(Holdable item);
 }

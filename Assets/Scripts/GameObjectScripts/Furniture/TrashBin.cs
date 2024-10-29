@@ -19,9 +19,9 @@ public class TrashBin : Furniture, IInteractable
 
     public void Interact()
     {
-        if (Player.Instance.GetCurrentHoldableItem() != null)
+        if (Player.Instance.CurrentHoldableItem != null)
         {
-            Player.Instance.GetCurrentHoldableItem().Remove();
+            Player.Instance.CurrentHoldableItem.Remove();
         }
     }
 }

@@ -9,7 +9,7 @@ public class Holdable : MonoBehaviour
 
     public bool Replace(ItemHolder newHolder)
     {   
-        if (newHolder.GetCurrentHoldableItem() == null)
+        if (newHolder.CurrentHoldableItem == null)
         {   
             currentHolder?.ClearCurrentHoldableItem();
             currentHolder = newHolder;

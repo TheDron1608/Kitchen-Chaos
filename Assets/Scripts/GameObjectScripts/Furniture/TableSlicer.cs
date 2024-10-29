@@ -51,24 +51,27 @@ public class TableSlicer : ItemHolder, IInteractable, IInteractableAlt
             _currentHoldableItem.Replace(Player.Instance);
             _progressBar.ResetProgress();
         }
-        else if (Player.Instance.GetCurrentHoldableItem() != null)
+        else if (Player.Instance.CurrentHoldableItem != null)
         {
-            Player.Instance.GetCurrentHoldableItem().Replace(this);
-            _progressBar.Progress = (GetCurrentHoldableItem() as SliceableHoldable).GetProgress();
+            Player.Instance.CurrentHoldableItem.Replace(this);
+            if (_currentHoldableItem is SliceableHoldable)
+            {
+                _progressBar.Progress = (CurrentHoldableItem as SliceableHoldable).GetProgress();
+            }
         }
     }
 
     public void InteractAlt()
     {
         if (
-            GetCurrentHoldableItem() is SliceableHoldable && 
-            !(GetCurrentHoldableItem() as SliceableHoldable).IsSliced && 
+            CurrentHoldableItem is SliceableHoldable && 
+            !(CurrentHoldableItem as SliceableHoldable).IsSliced && 
             !_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME)
             )
         {
             _animator.SetTrigger(ANIMATOR_ON_INTERACT_TRIGGER_NAME);
             SliceCurrentHoldableitem();
-            _progressBar.Progress = (GetCurrentHoldableItem() as SliceableHoldable).GetProgress();
+            _progressBar.Progress = (CurrentHoldableItem as SliceableHoldable).GetProgress();
         }
     }
 }
