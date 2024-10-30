@@ -52,13 +52,16 @@ public class CustomSandwich : Holdable
             {
                 AddIngredient(ingredient);
             }
+            holdableIngreditent.Remove();
         }
+        else
+        {
+            holdableIngreditent.CurrentHolder?.ClearCurrentHoldableItem();
+            holdableIngreditent.ClearCurrentHolder();
+            holdableIngreditent.transform.parent = transform;
+            holdableIngreditent.transform.localPosition = new Vector3(0, Ingredients.Count * INGREDIENT_HEIGHT, 0);
 
-
-        holdableIngreditent.CurrentHolder?.ClearCurrentHoldableItem();
-        holdableIngreditent.transform.parent = transform;
-        holdableIngreditent.transform.localPosition = new Vector3(0, Ingredients.Count * INGREDIENT_HEIGHT, 0);
-
-        Ingredients.Add(holdableIngreditent);
+            Ingredients.Add(holdableIngreditent);
+        }
     }
 }

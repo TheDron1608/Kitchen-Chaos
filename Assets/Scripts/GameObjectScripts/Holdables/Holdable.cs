@@ -47,6 +47,11 @@ public class Holdable : MonoBehaviour
         Replace(newHolder);
     }
 
+    public void ClearCurrentHolder()
+    {
+        _currentHolder = null;
+    }
+
     public void Remove()
     {
         CurrentHolder?.ClearCurrentHoldableItem();
