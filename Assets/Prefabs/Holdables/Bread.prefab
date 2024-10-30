@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708dc13b510fa409bc8e520108a541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHolder: {fileID: 0}
+  _currentHolder: {fileID: 0}
+  _instance: {fileID: 5794013359615784472}
   _roastedMesh: {fileID: 4035024060170490061}
   _currentMesh: {fileID: 3498699140431465740}
 --- !u!1001 &4268885578588679580

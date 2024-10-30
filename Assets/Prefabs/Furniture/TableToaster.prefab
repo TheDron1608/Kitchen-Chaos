@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressBarTimer
       objectReference: {fileID: 0}
+    - target: {fileID: 4541769715443240035, guid: 46fd225ce27a31649ba93db0ba55ea17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7515030810616121483, guid: 46fd225ce27a31649ba93db0ba55ea17,
         type: 3}
       propertyPath: m_LocalPosition.x

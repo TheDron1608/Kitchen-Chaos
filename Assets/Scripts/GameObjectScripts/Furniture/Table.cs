@@ -19,13 +19,21 @@ public class Table : ItemHolder, IInteractable
 
     public void Interact()
     {
-        if (_currentHoldableItem != null)
+        if (_currentHoldableItem != null && Player.Instance.CurrentHoldableItem == null)
         {
             _currentHoldableItem.Replace(Player.Instance);
         }
-        else if (Player.Instance.CurrentHoldableItem != null)
+        else if (_currentHoldableItem == null && Player.Instance.CurrentHoldableItem != null)
         {
             Player.Instance.CurrentHoldableItem.Replace(this);
+        }
+        else if (_currentHoldableItem != null && Player.Instance.CurrentHoldableItem != null)
+        {   
+            if (!(_currentHoldableItem is CustomSandwich))
+            {
+                _currentHoldableItem = Holdable.ConvertToCustomSandwich(CurrentHoldableItem);
+            }
+            (CurrentHoldableItem as CustomSandwich).AddIngredient(Player.Instance.CurrentHoldableItem);
         }
     }
 }
