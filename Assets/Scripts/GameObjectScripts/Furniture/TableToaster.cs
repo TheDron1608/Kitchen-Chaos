@@ -30,7 +30,7 @@ public class TableToaster : ItemHolder, IInteractable
             _progressBarTimer.Resetimer();
             StopCoroutine(_currentRoastCoroutine);
         }
-        else if (Player.Instance.CurrentHoldableItem != null && Player.Instance.CurrentHoldableItem is RoastableHoldable && !(Player.Instance.CurrentHoldableItem as RoastableHoldable).IsRoasted)
+        else if (Player.Instance.CurrentHoldableItem is RoastableHoldable)
         {
             Player.Instance.CurrentHoldableItem.Replace(this);
             _currentRoastCoroutine = StartCoroutine(FinishRoasting());

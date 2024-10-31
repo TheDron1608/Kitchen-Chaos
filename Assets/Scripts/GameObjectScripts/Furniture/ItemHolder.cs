@@ -30,11 +30,4 @@ public abstract class ItemHolder : Furniture
         item.transform.localPosition = Vector3.zero;
         item.transform.rotation = _itemHolderContainer.transform.rotation;
     }
-    public void SliceCurrentHoldableitem()
-    {
-        if (_currentHoldableItem != null && _currentHoldableItem is SliceableHoldable)
-        {
-            (_currentHoldableItem as SliceableHoldable).SliceProgress();
-        }
-    }
 }

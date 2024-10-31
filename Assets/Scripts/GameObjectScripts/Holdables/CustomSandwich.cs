@@ -64,4 +64,44 @@ public class CustomSandwich : Holdable
             Ingredients.Add(holdableIngreditent);
         }
     }
+
+    public void CreateAndAddIngredient(Holdable holdableIngreditent)
+    {
+        AddIngredient(Instantiate(holdableIngreditent));
+    }
+
+    public static bool operator == (CustomSandwich a, CustomSandwich b)
+    {
+        if (a.Ingredients.Count != b.Ingredients.Count) return false;
+
+        for (int i = 0; i < a.Ingredients.Count; i++)
+        {
+            if (a.Ingredients[i] != b.Ingredients[i]) return false;
+        }
+
+        return true;
+    }
+
+    public static bool operator != (CustomSandwich a, CustomSandwich b)
+    {
+        if (a.Ingredients.Count != b.Ingredients.Count) return true;
+
+        for (int i = 0; i < a.Ingredients.Count; i++)
+        {   
+            if (a.Ingredients[i] != b.Ingredients[i]) return true;
+        }
+
+        return false;
+        
+    }
+
+    public override bool Equals(object obj)
+    {
+        return this == (CustomSandwich)obj;
+    }
+
+    public override int GetHashCode()
+    {
+        return gameObject.GetInstanceID();
+    }
 }

@@ -65,13 +65,19 @@ public class TableSlicer : ItemHolder, IInteractable, IInteractableAlt
     {
         if (
             CurrentHoldableItem is SliceableHoldable && 
-            !(CurrentHoldableItem as SliceableHoldable).IsSliced && 
             !_animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATOR_ON_INTERACT_ANIMATION_NAME)
             )
         {
             _animator.SetTrigger(ANIMATOR_ON_INTERACT_TRIGGER_NAME);
             SliceCurrentHoldableitem();
-            _progressBar.Progress = (CurrentHoldableItem as SliceableHoldable).GetProgress();
+        }
+    }
+
+    public void SliceCurrentHoldableitem()
+    {
+        if (_currentHoldableItem is SliceableHoldable)
+        {
+            _progressBar.Progress = (_currentHoldableItem as SliceableHoldable).SliceProgress();
         }
     }
 }

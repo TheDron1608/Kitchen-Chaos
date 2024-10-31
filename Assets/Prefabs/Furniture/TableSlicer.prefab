@@ -201,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 1240665388850203375, guid: ee171e0e97cadea4aa414546519c66a0,
         type: 3}
       propertyPath: m_Name
-      value: TableSlicerNew
+      value: TableSlicer
       objectReference: {fileID: 0}
     - target: {fileID: 6542281760177418898, guid: ee171e0e97cadea4aa414546519c66a0,
         type: 3}
@@ -301,7 +301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemHolderContainer: {fileID: 2485583862079101227}
   _currentHoldableItem: {fileID: 0}
-  _removeRotationOfitemWhenReplace: 0
   _progressBar: {fileID: 3285961653815786876}
   _childMeshWithAnimatior: {fileID: 359184440377123031}
 --- !u!4 &6670786181722701609 stripped

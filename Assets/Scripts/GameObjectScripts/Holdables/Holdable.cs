@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class Holdable : MonoBehaviour
+public abstract class Holdable : MonoBehaviour
 {
     [SerializeField] protected ItemHolder _currentHolder;
 
@@ -67,5 +67,42 @@ public class Holdable : MonoBehaviour
         newSandwich.AddIngredient(convertWho);
 
         return newSandwich;
+    }
+
+    public static Holdable ConvertToSimpleHoldable(Holdable convertWho, Holdable convertTo)
+    {
+        if (convertTo.GetType() == typeof(CustomSandwich))
+        {
+            throw new Exception(
+                "to convert holdable into custom sandwich " +
+                "call ConvertToCustomSandwich()" +
+                "instead of ConvertToSimpleHoldable()"
+                );
+        }
+
+        Holdable newHoldable = Instantiate(convertTo);
+        newHoldable.ForceReplace(convertWho.CurrentHolder);
+
+        return newHoldable;
+    }
+
+    public static bool operator == (Holdable a, Holdable b)
+    {
+        return (a is null && b is null) || a?.GetType() == b?.GetType();
+    }
+
+    public static bool operator != (Holdable a, Holdable b)
+    {
+        return !(a == b);
+    }
+
+    public override bool Equals(object obj)
+    {
+        return this == (Holdable)obj;
+    }
+
+    public override int GetHashCode()
+    {
+        return gameObject.GetInstanceID();
     }
 }

@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SliceableHoldable : Holdable
+public abstract class SliceableHoldable : Holdable
 {
-    [SerializeField] protected GameObject _slicedMesh;
-    [SerializeField] protected GameObject _currentMesh;
     [SerializeField] private int _baseSlicesAmount;
     private int _slicesLeft;
 
@@ -14,25 +12,24 @@ public class SliceableHoldable : Holdable
         _slicesLeft = _baseSlicesAmount;
     }
 
-    public bool IsSliced { get; private set; } = false;
-
-    public void SliceProgress()
+    public float SliceProgress()
     {
-        if (!IsSliced)
+        float progressResult = 0f;
+        if (_slicesLeft > 0)
         {
             _slicesLeft--;
-            if (_slicesLeft <= 0 )
+            progressResult = GetProgress();
+            if (_slicesLeft == 0 )
             {
                 SliceFinish();
             }
         }
+        return progressResult;
     }
 
     protected void SliceFinish()
     {
-        _currentMesh.SetActive(false);
-        _slicedMesh.SetActive(true);
-        IsSliced = true;
+        Holdable.ConvertToSimpleHoldable(this, GlobalHoldableInstances.SlicedCheeseInstance);
     }
 
     public float GetProgress()
