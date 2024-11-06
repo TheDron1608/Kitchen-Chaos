@@ -4,14 +4,31 @@ using UnityEngine;
 
 public class CustomSandwich : Holdable
 {
-    public List<Holdable> Ingredients = new List<Holdable>();
+    private List<Holdable> _ingredients = new List<Holdable>();
     const float INGREDIENT_HEIGHT = 0.125f;
     [SerializeField] public CustomSandwich Instance { get; private set; }
+    [SerializeField] private List<GlobalHoldableInstances.GlobalHoldablesEnum> _initialIngredients;
 
+    public List<Holdable> Ingredients
+    {
+        get
+        {
+            return _ingredients;
+        }
+        set
+        {
+            _ingredients = value;
+        }
+    }
 
-    protected void Start()
+    private void Start()
     {
         Player.Instance.OnInteract += Player_OnIteract;
+
+        for (int i = 0; i < _initialIngredients.Count; i++)
+        {
+            Ingredients.Add(GlobalHoldableInstances.GetHoldableInstance(_initialIngredients[i]));
+        }
     }
 
     void Player_OnIteract(object sender, IInteractable sendTarget)
@@ -68,6 +85,19 @@ public class CustomSandwich : Holdable
     public void CreateAndAddIngredient(Holdable holdableIngreditent)
     {
         AddIngredient(Instantiate(holdableIngreditent));
+    }
+
+    public void LogIngredients()
+    {   
+        if (Ingredients.Count == 0)
+        {
+            Debug.Log("no ingredients");
+            return;
+        }
+        foreach (Holdable holdable in Ingredients)
+        {
+            Debug.Log(holdable);
+        }
     }
 
     public static bool operator == (CustomSandwich a, CustomSandwich b)

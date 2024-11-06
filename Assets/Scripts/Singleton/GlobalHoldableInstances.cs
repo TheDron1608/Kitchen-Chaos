@@ -29,4 +29,36 @@ public class GlobalHoldableInstances : MonoBehaviour
         SlicedCheeseInstance = _slicedCheeseInstance;
         CustomSandwichInstance = _customSandwichInstance;
     }
+
+    public enum GlobalHoldablesEnum
+    {
+        None,
+        Banana,
+        Bread,
+        ToastedBread,
+        Cheese,
+        SlicedCheese,
+        CustomSandwich,
+    }
+
+    public static Holdable GetHoldableInstance(GlobalHoldablesEnum item)
+    {
+        switch (item)
+        {
+            case GlobalHoldablesEnum.Banana: 
+                return BananaInstance; 
+            case GlobalHoldablesEnum.Bread: 
+                return BreadInstance;
+            case GlobalHoldablesEnum.ToastedBread:
+                return ToastedBreadInstance;
+            case GlobalHoldablesEnum.Cheese:
+                return CheeseInstance;
+            case GlobalHoldablesEnum.SlicedCheese:
+                return SlicedCheeseInstance;
+            case GlobalHoldablesEnum.CustomSandwich:
+                return CustomSandwichInstance;
+            default:
+                return null;
+        }
+    }
 }

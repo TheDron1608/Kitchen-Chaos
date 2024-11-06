@@ -5,11 +5,19 @@ using UnityEngine;
 public abstract class SliceableHoldable : Holdable
 {
     [SerializeField] private int _baseSlicesAmount;
+    [SerializeField] private bool _sliceOnStart = false;
     private int _slicesLeft;
 
     private void Start()
     {
-        _slicesLeft = _baseSlicesAmount;
+        if (_sliceOnStart)
+        {
+            _slicesLeft = 0;
+            SliceFinish();
+        }
+        else { 
+            _slicesLeft = _baseSlicesAmount;
+        }
     }
 
     public float SliceProgress()

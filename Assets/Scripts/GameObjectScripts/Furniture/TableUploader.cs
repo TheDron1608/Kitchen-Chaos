@@ -9,7 +9,7 @@ public class TableUploader : Furniture, IInteractable
     private void Start()
     {
         Player.Instance.OnInteract += Player_OnIteract;
-        CreateNewRequiredSandwich(1);
+        GlobalSandwichOrders.GetCurrentOrderedSandwich().LogIngredients();
     }
 
     void Player_OnIteract(object sender, IInteractable sendTarget)
@@ -25,23 +25,14 @@ public class TableUploader : Furniture, IInteractable
         if (
             Player.Instance.CurrentHoldableItem != null &&
             Player.Instance.CurrentHoldableItem is CustomSandwich &&
-            (Player.Instance.CurrentHoldableItem as CustomSandwich) == CurrentRequiredSandwich
+            (Player.Instance.CurrentHoldableItem as CustomSandwich) == GlobalSandwichOrders.GetCurrentOrderedSandwich()
             )
         {
             Player.Instance.CurrentHoldableItem.Remove();
+            GlobalSandwichOrders.LevelUp();
+
+            Debug.Log("UPLOADED SUCCESSFULLY");
+            GlobalSandwichOrders.GetCurrentOrderedSandwich().LogIngredients();
         }
-    }
-
-    public static void CreateNewRequiredSandwich (int difficulty)
-    {   
-        CurrentRequiredSandwich?.Remove();
-
-        CustomSandwich newOrderedSandwich = Instantiate(GlobalHoldableInstances.CustomSandwichInstance);
-        newOrderedSandwich.CreateAndAddIngredient(GlobalHoldableInstances.BreadInstance);
-        newOrderedSandwich.CreateAndAddIngredient(GlobalHoldableInstances.BananaInstance);
-        newOrderedSandwich.CreateAndAddIngredient(GlobalHoldableInstances.BreadInstance);
-        newOrderedSandwich.gameObject.SetActive(false);
-
-        CurrentRequiredSandwich = newOrderedSandwich;
     }
 }

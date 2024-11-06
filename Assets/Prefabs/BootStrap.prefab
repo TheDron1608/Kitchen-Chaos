@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083456780024378582}
   - component: {fileID: 2677891672856805579}
+  - component: {fileID: 2896898473474033184}
   m_Layer: 0
   m_Name: BootStrap
   m_TagString: Untagged
@@ -56,3 +57,23 @@ MonoBehaviour:
     type: 3}
   _customSandwichInstance: {fileID: 6969228338537691608, guid: 2cf4a777be933884c90bb2b478152682,
     type: 3}
+--- !u!114 &2896898473474033184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447682010429465062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598995e719b34e84da99124a98ec2d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inintialSandwichOrders:
+  - {fileID: 5537317564107259129, guid: 6c0f8d0c8051c454597fbb42ddf09df3, type: 3}
+  - {fileID: 3237028679843554316, guid: 171900255b5ce9c4da68991d630a7d8d, type: 3}
+  - {fileID: 826971323204766653, guid: 23321a1b13da7114499806fb43d4446a, type: 3}
+  - {fileID: 1672958199214039217, guid: 9f12390e016f01945b323c2d68695ecb, type: 3}
+  - {fileID: 4339669225314420339, guid: d399f32492d409b45b5d4d7b7af60eea, type: 3}
+  - {fileID: 3024515554226956661, guid: 9d08723bc21007f438180f4e5ca7b475, type: 3}
+  - {fileID: 2471219851854278984, guid: 0e75686d6f56d7340b0cc5d135826acf, type: 3}

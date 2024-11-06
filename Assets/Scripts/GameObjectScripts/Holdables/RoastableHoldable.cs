@@ -4,8 +4,15 @@ using UnityEngine;
 
 public abstract class RoastableHoldable : Holdable
 {
-    [SerializeField] protected GameObject _roastedMesh;
-    [SerializeField] protected GameObject _currentMesh;
+    [SerializeField] private bool _roastOnStart = false;
+
+    private void Start()
+    {
+        if (_roastOnStart)
+        {
+            Roast();
+        }
+    }
 
     public void Roast()
     {
