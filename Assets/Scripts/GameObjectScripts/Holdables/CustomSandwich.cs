@@ -7,7 +7,7 @@ public class CustomSandwich : Holdable
     private List<Holdable> _ingredients = new List<Holdable>();
     const float INGREDIENT_HEIGHT = 0.125f;
     [SerializeField] public CustomSandwich Instance { get; private set; }
-    [SerializeField] private List<GlobalHoldableInstances.GlobalHoldablesEnum> _initialIngredients;
+    [SerializeField] private List<GlobalInstances.GlobalHoldablesEnum> _initialIngredients;
 
     public List<Holdable> Ingredients
     {
@@ -27,7 +27,7 @@ public class CustomSandwich : Holdable
 
         for (int i = 0; i < _initialIngredients.Count; i++)
         {
-            Ingredients.Add(GlobalHoldableInstances.GetHoldableInstance(_initialIngredients[i]));
+            Ingredients.Add(GlobalInstances.GetHoldableInstance(_initialIngredients[i]));
         }
     }
 

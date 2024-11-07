@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHolder: {fileID: 0}
+  _labelSprite: {fileID: 21300000, guid: 19d59ca3679d95d4b9183e80b11c6e92, type: 3}
 --- !u!1001 &4268885578588679580
 PrefabInstance:
   m_ObjectHideFlags: 0

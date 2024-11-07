@@ -8,6 +8,7 @@ using UnityEngine;
 public abstract class Holdable : MonoBehaviour
 {
     [SerializeField] protected ItemHolder _currentHolder;
+    [SerializeField] private Sprite _labelSprite;
 
     public ItemHolder CurrentHolder
     {
@@ -21,6 +22,17 @@ public abstract class Holdable : MonoBehaviour
         }
     }
 
+    public Sprite LabelSprite
+    {
+        get
+        {
+            return _labelSprite;
+        }
+        private set
+        {
+            _labelSprite = value;
+        }
+    }
 
     public bool Replace(ItemHolder newHolder)
     {   
@@ -60,7 +72,7 @@ public abstract class Holdable : MonoBehaviour
 
     public static CustomSandwich ConvertToCustomSandwich(Holdable convertWho)
     {
-        CustomSandwich newSandwich = Instantiate(GlobalHoldableInstances.CustomSandwichInstance);
+        CustomSandwich newSandwich = Instantiate(GlobalInstances.CustomSandwichInstance);
 
         newSandwich.ForceReplaceWithoutRemovingOldItem(convertWho.CurrentHolder);
 

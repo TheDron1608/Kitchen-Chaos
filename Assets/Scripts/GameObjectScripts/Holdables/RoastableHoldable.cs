@@ -16,6 +16,6 @@ public abstract class RoastableHoldable : Holdable
 
     public void Roast()
     {
-        Holdable.ConvertToSimpleHoldable(this, GlobalHoldableInstances.ToastedBreadInstance);
+        Holdable.ConvertToSimpleHoldable(this, GlobalInstances.ToastedBreadInstance);
     }
 }

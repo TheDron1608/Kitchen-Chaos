@@ -9,7 +9,6 @@ public class TableUploader : Furniture, IInteractable
     private void Start()
     {
         Player.Instance.OnInteract += Player_OnIteract;
-        GlobalSandwichOrders.GetCurrentOrderedSandwich().LogIngredients();
     }
 
     void Player_OnIteract(object sender, IInteractable sendTarget)
@@ -24,15 +23,13 @@ public class TableUploader : Furniture, IInteractable
     {
         if (
             Player.Instance.CurrentHoldableItem != null &&
-            Player.Instance.CurrentHoldableItem is CustomSandwich &&
-            (Player.Instance.CurrentHoldableItem as CustomSandwich) == GlobalSandwichOrders.GetCurrentOrderedSandwich()
+            Player.Instance.CurrentHoldableItem is CustomSandwich
             )
         {
-            Player.Instance.CurrentHoldableItem.Remove();
-            GlobalSandwichOrders.LevelUp();
-
-            Debug.Log("UPLOADED SUCCESSFULLY");
-            GlobalSandwichOrders.GetCurrentOrderedSandwich().LogIngredients();
+            if (GlobalSandwichOrders.VerifySandwich(Player.Instance.CurrentHoldableItem as CustomSandwich))
+            {
+                Player.Instance.CurrentHoldableItem.Remove();
+            }
         }
     }
 }

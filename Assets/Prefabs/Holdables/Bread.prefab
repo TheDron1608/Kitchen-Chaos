@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHolder: {fileID: 0}
-  _roastedMesh: {fileID: 0}
-  _currentMesh: {fileID: 0}
+  _labelSprite: {fileID: 21300000, guid: e5358fdbe07dc514cac435841273ae8a, type: 3}
+  _roastOnStart: 0
 --- !u!1001 &4268885578588679580
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public abstract class SliceableHoldable : Holdable
 
     protected void SliceFinish()
     {
-        Holdable.ConvertToSimpleHoldable(this, GlobalHoldableInstances.SlicedCheeseInstance);
+        Holdable.ConvertToSimpleHoldable(this, GlobalInstances.SlicedCheeseInstance);
     }
 
     public float GetProgress()

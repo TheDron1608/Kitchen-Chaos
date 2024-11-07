@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHolder: {fileID: 0}
+  _labelSprite: {fileID: 21300000, guid: 1347023b4c40f034a97cc209e0bf6041, type: 3}
 --- !u!1001 &5616581044773557771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHolder: {fileID: 0}
+  _labelSprite: {fileID: 0}
 --- !u!4 &5366219064246464992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: defa328dea9d10d46b4c6ad70cc4933e,
