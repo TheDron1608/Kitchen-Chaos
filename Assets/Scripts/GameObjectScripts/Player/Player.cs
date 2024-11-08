@@ -22,7 +22,6 @@ public class Player : ItemHolder
 {   
     public static Player Instance;
 
-    [Header("properties")]
     [SerializeField] protected float _speed;
 
     public event EventHandler<IInteractable> OnInteract;
@@ -86,9 +85,9 @@ public class Player : ItemHolder
     protected void UpdateMovement()
     {   
         Vector2 inputVector = _playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y) * Time.deltaTime * _speed;
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y) * _speed;
 
-        _rigidBodyComponent.velocity = moveDir * 100;
+        _rigidBodyComponent.velocity = moveDir;
 
         if (moveDir != Vector3.zero)
         {
