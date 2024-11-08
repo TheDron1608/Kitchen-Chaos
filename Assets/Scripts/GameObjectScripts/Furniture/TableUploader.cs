@@ -22,13 +22,17 @@ public class TableUploader : Furniture, IInteractable
     public void Interact()
     {
         if (
-            Player.Instance.CurrentHoldableItem != null &&
-            Player.Instance.CurrentHoldableItem is CustomSandwich
+            Player.Instance.CurrentHoldableItem != null
             )
-        {
-            if (GlobalSandwichOrders.VerifySandwich(Player.Instance.CurrentHoldableItem as CustomSandwich))
+        {   
+            if (Player.Instance.CurrentHoldableItem is CustomSandwich && GlobalSandwichOrders.VerifySandwich(Player.Instance.CurrentHoldableItem as CustomSandwich))
             {
                 Player.Instance.CurrentHoldableItem.Remove();
+                GlobalSoundManager.PlaySoundAt(GlobalSoundManager.GlobalSoundEnum.Success, transform.position);
+            }
+            else
+            {
+                GlobalSoundManager.PlaySoundAt(GlobalSoundManager.GlobalSoundEnum.Fail, transform.position);
             }
         }
     }
