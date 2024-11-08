@@ -24,7 +24,10 @@ public class CustomSandwich : Holdable
     private void Start()
     {
         Player.Instance.OnInteract += Player_OnIteract;
+    }
 
+    private void Awake()
+    {
         for (int i = 0; i < _initialIngredients.Count; i++)
         {
             Ingredients.Add(GlobalInstances.GetHoldableInstance(_initialIngredients[i]));
