@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1083456780024378582}
   - component: {fileID: 2677891672856805579}
-  - component: {fileID: 2896898473474033184}
+  - component: {fileID: 5705179616006388435}
+  - component: {fileID: 9133538622735238830}
+  - component: {fileID: 5468518870193426677}
+  - component: {fileID: -7710149583339629569}
   m_Layer: 0
-  m_Name: BootStrap
+  m_Name: Global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +60,14 @@ MonoBehaviour:
     type: 3}
   _customSandwichInstance: {fileID: 6969228338537691608, guid: 2cf4a777be933884c90bb2b478152682,
     type: 3}
---- !u!114 &2896898473474033184
+  _bananaInstanceSprite: {fileID: 0}
+  _breadInstanceSprite: {fileID: 0}
+  _toastedBreadInstanceSprite: {fileID: 0}
+  _cheeseInstanceSprite: {fileID: 0}
+  _slicedCheeseInstanceSprite: {fileID: 0}
+  _customSandwichInstanceSprite: {fileID: 0}
+  _sandwichOrderInstance: {fileID: 0}
+--- !u!114 &5705179616006388435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,11 +79,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598995e719b34e84da99124a98ec2d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inintialSandwichOrders:
-  - {fileID: 5537317564107259129, guid: 6c0f8d0c8051c454597fbb42ddf09df3, type: 3}
-  - {fileID: 3237028679843554316, guid: 171900255b5ce9c4da68991d630a7d8d, type: 3}
-  - {fileID: 826971323204766653, guid: 23321a1b13da7114499806fb43d4446a, type: 3}
-  - {fileID: 1672958199214039217, guid: 9f12390e016f01945b323c2d68695ecb, type: 3}
-  - {fileID: 4339669225314420339, guid: d399f32492d409b45b5d4d7b7af60eea, type: 3}
-  - {fileID: 3024515554226956661, guid: 9d08723bc21007f438180f4e5ca7b475, type: 3}
-  - {fileID: 2471219851854278984, guid: 0e75686d6f56d7340b0cc5d135826acf, type: 3}
+  _initialSandwichOrderContainer: {fileID: 0}
+--- !u!114 &9133538622735238830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447682010429465062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c92acaa1c52af4fab10904db8cc84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialFailSound: {fileID: 8300000, guid: 53922c2c88f2a3041b809821cc26a633, type: 3}
+  _initialSuccessSound: {fileID: 8300000, guid: 502e2f4d5ecbc3e438a6f9d2423a053f,
+    type: 3}
+--- !u!114 &5468518870193426677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447682010429465062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f8a95b403594a4eae53f605730a48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7710149583339629569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447682010429465062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118f9a6754d174d469986ae9a6b8aae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialStartTimer: {fileID: 4498362719267455493, guid: 1dbbd6ec9fd19e44da32457be899c7fb,
+    type: 3}
+  _initialGameplayTimeLeftTimer: {fileID: 6509176830607453306, guid: 2f70dbac1ffbe6146bb91529a2961994,
+    type: 3}
+  _initialGameOverScreen: {fileID: 4432856978169699783, guid: 92f415edfda834a4589a7ee9b79a46eb,
+    type: 3}

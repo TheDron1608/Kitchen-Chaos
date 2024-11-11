@@ -69,11 +69,22 @@ public class Player : ItemHolder
     }
     private void Player_OnInteract(InputAction.CallbackContext obj)
     {
+        if (!GetCanInteract()) return;
         OnInteract?.Invoke(this, _currentSelectedObject as IInteractable);
     }
     private void Player_OnInteractAlt(InputAction.CallbackContext obj)
     {
+        if (!GetCanInteract()) return;
         OnInteractAlt?.Invoke(this, _currentSelectedObject as IInteractable);
+    }
+
+    public bool GetCanInteract()
+    {
+        return GlobalGameState.CurrentGameState == GlobalGameState.GameStateEnum.Gameplay;
+    }
+    public bool GetCanMove()
+    {
+        return GlobalGameState.CurrentGameState != GlobalGameState.GameStateEnum.GameOver;
     }
 
     protected void Update()
@@ -83,7 +94,13 @@ public class Player : ItemHolder
     }
 
     protected void UpdateMovement()
-    {   
+    {
+        if (!GetCanMove()) {
+            _rigidBodyComponent.velocity = Vector3.zero;
+            _isWalking = false;
+            return;
+        }
+
         Vector2 inputVector = _playerInput.Player.Move.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y) * _speed;
 
@@ -99,6 +116,12 @@ public class Player : ItemHolder
 
     protected void UpdateSelected()
     {
+        if (!GetCanInteract())
+        {
+            OnReSelect?.Invoke(this, new PlayerReSelectEventArgs(_currentSelectedObject, null));
+            return;
+        }
+
         Furniture newSelectedObject;
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out RaycastHit hit, 5f))
         {

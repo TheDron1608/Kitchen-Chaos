@@ -1592,7 +1592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemHolderContainer: {fileID: 451101262}
   _currentHoldableItem: {fileID: 0}
-  _speed: 45
+  _speed: 10
 --- !u!54 &805512597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2012,7 +2012,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: BootStrap
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5705179616006388435, guid: 6ecfae4cc65cd4747b243b31c11980e3,
+        type: 3}
+      propertyPath: _initialSandwichOrderContainer
+      value: 
+      objectReference: {fileID: 871290526}
+    m_RemovedComponents:
+    - {fileID: 2896898473474033184, guid: 6ecfae4cc65cd4747b243b31c11980e3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1083456780024378582, guid: 6ecfae4cc65cd4747b243b31c11980e3,

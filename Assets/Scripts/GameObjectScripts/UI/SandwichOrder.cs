@@ -26,7 +26,6 @@ public class SandwichOrder : MonoBehaviour
 
         for (int i = 0; i < sandwich.Ingredients.Count; i++)
         {
-            Debug.Log(sandwich.Ingredients[i].name);
             GameObject newIngredientLabel = Instantiate(_defaultImageSample, _ingredietsContainer.transform);
 
             if (newIngredientLabel.TryGetComponent<UnityEngine.UI.Image>(out UnityEngine.UI.Image newIngredientImage))
@@ -38,7 +37,6 @@ public class SandwichOrder : MonoBehaviour
                 throw new System.Exception("couldn't get UnityEngine.UI.Image component in orderSandwich UI");
             }
         }
-        Debug.Log(sandwich.Name + " total: " + sandwich.Ingredients.Count);
     }
 
     public static void CreateNewSandwichOrder(OrderSandwich sandwich)

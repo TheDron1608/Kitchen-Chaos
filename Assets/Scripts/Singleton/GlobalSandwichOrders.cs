@@ -11,6 +11,7 @@ public class GlobalSandwichOrders : MonoBehaviour
     private static List<OrderSandwich> _currentSandwichOrders = new List<OrderSandwich>();
     private static int _level = 0;
     private static GameObject _sandwichOrderContainer;
+    private static int _score = 0;
 
     public static GameObject SandwichorderContainer
     {
@@ -21,6 +22,18 @@ public class GlobalSandwichOrders : MonoBehaviour
         private set
         {
             _sandwichOrderContainer = value;
+        }
+    }
+
+    public static int Score
+    {
+        get
+        {
+            return _score;
+        }
+        private set
+        {
+            _score = value;
         }
     }
 
@@ -62,6 +75,7 @@ public class GlobalSandwichOrders : MonoBehaviour
                 _currentSandwichOrders.RemoveAt(i);
                 CreateNewOrder();
                 RefreshOrdersListUI();
+                Score++;
                 return true;
             }
         }
