@@ -71,6 +71,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-#custom addition from Andrey
+#custom addition
 !*.dll
 !*.obj
+
+#builded project
+[Bb]in/*
